@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "171629983448",
+    "project_id": "peridotapp-c18fa",
+    "storage_bucket": "peridotapp-c18fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171629983448:android:8d673a5a155495f88889ad",
+        "android_client_info": {
+          "package_name": "com.example.peridotapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171629983448-5btl4adro8ko0n5rg7bfv8uaq0r01e84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWky3fe0JM0jQOz4MMHAewtw8a7z3FHak"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171629983448-5btl4adro8ko0n5rg7bfv8uaq0r01e84.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
