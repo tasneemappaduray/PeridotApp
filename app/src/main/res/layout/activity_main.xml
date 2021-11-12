@@ -9,6 +9,22 @@
         tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btn_respondToRequest"
+        android:layout_width="335dp"
+        android:layout_height="49dp"
+        android:background="@drawable/rounded_corners"
+        android:fontFamily="@font/aclonica"
+        android:text="FULFIL REQUEST"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:backgroundTint="@color/maroon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
+
+    <Button
         android:id="@+id/btn_report"
         android:layout_width="168dp"
         android:layout_height="137dp"
@@ -55,7 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.414" />
 
     <Button
         android:id="@+id/btn_logout"
@@ -69,7 +85,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_help" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_help"
+        app:layout_constraintVertical_bias="0.714" />
 
     <ImageView
         android:id="@+id/profile_imageView"

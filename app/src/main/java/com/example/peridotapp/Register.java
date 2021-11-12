@@ -2,7 +2,6 @@ package com.example.peridotapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -22,7 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class Register extends AppCompatActivity {
-
     EditText mFullName, mEmail, mPhoneNumber, mPassword;
     Button mRegisterBtn;
     TextView mLoginText;
@@ -31,12 +28,10 @@ public class Register extends AppCompatActivity {
     DatabaseReference dbRef;
     Users user;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
         mFullName = findViewById(R.id.txt_name);
         mEmail = findViewById(R.id.email_ed_txt);
         mPhoneNumber = findViewById(R.id.phoneNumber_ed_txt);
@@ -47,8 +42,6 @@ public class Register extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         user = new Users();
         dbRef = FirebaseDatabase.getInstance().getReference().child("User");
-
-
 
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -76,7 +69,6 @@ public class Register extends AppCompatActivity {
                 user.setEmail(email);
                 user.setPhoneNumber(phoneNum);
                 dbRef.push().setValue(user);
-
 
                 Toast.makeText(Register.this, "User Data stored successfully", Toast.LENGTH_SHORT).show();
 

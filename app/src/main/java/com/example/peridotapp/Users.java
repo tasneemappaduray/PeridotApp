@@ -31,6 +31,4 @@ public class Users {
     public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
-
 }
