@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class Register extends AppCompatActivity {
 
@@ -25,6 +28,9 @@ public class Register extends AppCompatActivity {
     TextView mLoginText;
     FirebaseAuth fAuth;
     ProgressBar proBar;
+    DatabaseReference dbRef;
+    Users user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +45,8 @@ public class Register extends AppCompatActivity {
         mLoginText = findViewById(R.id.login_txt);
         proBar = findViewById(R.id.register_pBar);
         fAuth = FirebaseAuth.getInstance();
+        user = new Users();
+        dbRef = FirebaseDatabase.getInstance().getReference().child("User");
 
 
 
@@ -52,6 +60,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
+                Long phoneNum = Long.parseLong(mPhoneNumber.getText().toString().trim());
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is required");
@@ -62,6 +71,14 @@ public class Register extends AppCompatActivity {
                     mPassword.setError("Password is required");
                     return;
                 }
+
+                user.setName(mFullName.getText().toString().trim());
+                user.setEmail(email);
+                user.setPhoneNumber(phoneNum);
+                dbRef.push().setValue(user);
+
+
+                Toast.makeText(Register.this, "User Data stored successfully", Toast.LENGTH_SHORT).show();
 
                 proBar.setVisibility(View.VISIBLE);
 
